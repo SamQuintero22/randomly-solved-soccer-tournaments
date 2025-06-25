@@ -1,2 +1,5 @@
 # Randomly-solved-soccer-tournaments
-this will be the most unpredictibles competition of the world. Make yours bets! but not if you are less 18 
+This will be the most unpredictible competitiond of the world. Make yours bets! but not if you are less 18.
+
+# Goal
+The objective of this project is train inheritance, abstact classes and interfaces but making it funny taking advantage of the most popular sport on the world (taking into account its characteristic randomness). 
