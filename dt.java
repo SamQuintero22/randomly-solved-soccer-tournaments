@@ -5,7 +5,6 @@ public class dt extends persona{
     public dt(String nombre, String dni, int edad, String estilo){
 
         super(nombre, dni, edad);
-        this.esDT = true;
         this.estilo = estilo;
 
     }
