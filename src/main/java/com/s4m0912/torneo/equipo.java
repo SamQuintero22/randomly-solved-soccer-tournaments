@@ -7,7 +7,7 @@ public class equipo {
     protected String estadio; 
     protected LocalDate fechaFundacion;
     protected dt directorTecnico;
-    protected LinkedList<persona> plantilla; 
+    protected LinkedList<jugador> plantilla; 
     
     public equipo(String nombreEquipo, String estadio, LocalDate fechaFundacion){
 
@@ -19,7 +19,7 @@ public class equipo {
 
     }
 
-    public void agregarPersona(persona p){
+    public void agregarJugador(jugador p){
 
         plantilla.add(p);
 
@@ -57,8 +57,9 @@ public class equipo {
         System.out.println("Esta es la plantilla de " + nombreEquipo);
         System.out.println("=============================================");
 
-         for (persona p : plantilla) {
+         for (jugador p : plantilla) {
             System.out.println("-");
+            System.out.print("#" + p.getDorsal() + " || ");
             System.out.print(p.getNombre() + " || ");
             p.obtenerRol();
             System.out.println(" || "+ p.getEdad() + " age");
@@ -75,13 +76,13 @@ public class equipo {
     } 
     
       public static void main(String[] args) {
-        jugador j1 = new jugador("Lionel Messi", "12345678", 36, "Delantero");
-        jugador j2 = new jugador("Emiliano Martínez", "87654321", 32, "Arquero");
+        jugador j1 = new jugador("Lionel Messi", "12345678", 36, "Delantero",10);
+        jugador j2 = new jugador("Emiliano Martínez", "87654321", 32, "Arquero",1);
 
         equipo equipo1 = new equipo("paris", "estadio grande", LocalDate.of(2004, 5, 16));
 
-        equipo1.agregarPersona(j1);
-        equipo1.agregarPersona(j2);
+        equipo1.agregarJugador(j1);
+        equipo1.agregarJugador(j2);
         equipo1.contratarDT("Marcelo Gallardo", "9876543", 40, "Agresivo");
         equipo1.mostrarPlantilla();
 
