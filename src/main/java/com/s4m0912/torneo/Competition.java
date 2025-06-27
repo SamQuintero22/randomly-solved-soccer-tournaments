@@ -1,12 +1,16 @@
 
-import java.util.LinkedList;
-
 public interface Competition {
 
-    public static final LinkedList<equipo> competidores = new LinkedList<equipo>();
+    void definirGanador();
 
-    
+    int mostrarPremio();
 
-    
+    String mostrarNombre();
+
+    void cambiarPremio();
+
+    void cambiarNombre();
+
+    void verTRofeo();
     
 }
