@@ -173,25 +173,5 @@ public class liga extends competitionAbs implements Competition{
         System.out.println("=-=-=-=-=-=-=-==-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
     }
     
-    public static void main(String[] args) {
-        
-        liga nuevaLiga = new liga(); // ejecuta el constructor interactivo
-
-        // Listamos los equipos ordenados
-        nuevaLiga.listarParticipantes();
-
-        // Mostramos el premio actual
-        nuevaLiga.mostrarPremio();
-
-        // Mostramos el trofeo (si está definido en la superclase o en un atributo)
-        nuevaLiga.verTrofeo();
-        
-        nuevaLiga.cambiarNombre();
-
-
-        System.out.println(nuevaLiga.nameCompetition);
-
-
-    }
 
 }

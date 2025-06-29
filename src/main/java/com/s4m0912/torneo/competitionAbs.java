@@ -12,7 +12,7 @@ public abstract class competitionAbs {
 
     public competitionAbs(){
 
-        Scanner scanner = new Scanner(System.in);
+        Scanner scanner = liga.scanner;
         System.out.println("Ingrese el nombre de la competicion:");
         String palabra = scanner.nextLine(); 
         nameCompetition = palabra;
@@ -64,7 +64,6 @@ public abstract class competitionAbs {
 
 
         historialCampeones = new LinkedList<>();
-
     }
 
 /*guardo el ascci de copa libertadores
