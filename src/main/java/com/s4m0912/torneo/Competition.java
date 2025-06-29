@@ -5,7 +5,7 @@ public interface Competition {
 
     void mostrarPremio();
 
-    void mostrarNombre();
+    String mostrarNombre();
 
     void cambiarPremio();
 

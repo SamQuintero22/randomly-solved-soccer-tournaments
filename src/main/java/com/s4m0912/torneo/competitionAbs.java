@@ -63,8 +63,6 @@ public abstract class competitionAbs {
         moneyReward = numero;
 
 
-        scanner.close();       
-
         historialCampeones = new LinkedList<>();
 
     }
