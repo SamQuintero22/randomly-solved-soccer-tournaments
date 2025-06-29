@@ -1,5 +1,11 @@
-public class liga implements Competition {
+public class liga extends competitionAbs implements Competition{
 
+    public liga(){
+
+        super();
+
+    }
+    
     @Override
     public void definirGanador() {
         // TODO Auto-generated method stub

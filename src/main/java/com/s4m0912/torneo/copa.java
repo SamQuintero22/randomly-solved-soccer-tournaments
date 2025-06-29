@@ -1,4 +1,4 @@
-public class copa implements Competition {
+public class copa extends competitionAbs implements Competition {
 
     @Override
     public void definirGanador() {
