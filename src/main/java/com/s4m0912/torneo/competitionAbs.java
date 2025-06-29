@@ -1,12 +1,14 @@
+import java.util.LinkedList;
 import java.util.Scanner;
 
 public abstract class competitionAbs {
 
     protected String nameCompetition;
-    protected String nombreTrofeo; 
     protected String trofeoAscci;
     protected int moneyReward;
     protected String qualificationAchievement;
+
+    public static LinkedList<equipo> historialCampeones;
 
     public competitionAbs(){
 
@@ -14,12 +16,10 @@ public abstract class competitionAbs {
         System.out.println("Ingrese el nombre de la competicion:");
         String palabra = scanner.nextLine(); 
         nameCompetition = palabra;
-        
-        System.out.println("Ingrese el nombre del trofeo:");
-        palabra = scanner.nextLine(); 
-        nombreTrofeo = palabra;
 
         System.out.println("Ingrese el ascci del trofeo si lo tuviese:");
+        System.out.println("(Cuando termine deje la linea vacia)");
+
         String construyendoAscci = "";
 
         while (true) {
@@ -65,7 +65,7 @@ public abstract class competitionAbs {
 
         scanner.close();       
 
-
+        historialCampeones = new LinkedList<>();
 
     }
 

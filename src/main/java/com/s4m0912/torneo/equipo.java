@@ -7,7 +7,8 @@ public class equipo {
     protected String estadio; 
     protected LocalDate fechaFundacion;
     protected dt directorTecnico;
-    protected LinkedList<jugador> plantilla; 
+    protected LinkedList<jugador> plantilla;
+    protected int cantidadPuntos; 
     
     public equipo(String nombreEquipo, String estadio, LocalDate fechaFundacion){
 
@@ -16,6 +17,7 @@ public class equipo {
         this.fechaFundacion = fechaFundacion;
         this.plantilla = new LinkedList<>();
         this.directorTecnico = null;
+        cantidadPuntos = 0;
 
     }
 

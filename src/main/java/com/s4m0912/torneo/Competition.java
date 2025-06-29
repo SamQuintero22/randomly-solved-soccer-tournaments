@@ -3,9 +3,9 @@ public interface Competition {
 
     void definirGanador();
 
-    int mostrarPremio();
+    void mostrarPremio();
 
-    String mostrarNombre();
+    void mostrarNombre();
 
     void cambiarPremio();
 
