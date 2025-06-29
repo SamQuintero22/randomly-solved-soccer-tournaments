@@ -2,26 +2,36 @@ import java.util.*;
 import java.time.*;
 public class liga extends competitionAbs implements Competition{
 
-    protected int cantidadParticipantes; 
+    protected int cantidadParticipantes = -1; 
     protected equipo[] posiciones;
     protected int puestosLibertadores = -1;
     protected int puestosSudamericana = -1;
     protected int puestosDescensos = -1;
+    protected int cantidadFechas; 
 
     public static final Scanner scanner = new Scanner(System.in); // único scanner compartido
     
     public liga(){
 
-        super();
+        super(); //usa el metodo establezido para construir una competition 
 
-        System.out.println("indique cuantos participantes va a tener la nueva liga");
-        int numero = scanner.nextInt();
+        System.out.println("indique cuantos participantes va a tener la nueva liga, debe ser un numero par: ");
+
+        int numero;
+
+        while (cantidadParticipantes <= 0 || cantidadParticipantes % 2 != 0) {
+
+        numero = scanner.nextInt();
         scanner.nextLine(); // LIMPIA el \n pendiente
         cantidadParticipantes = numero;
+            
+        }
 
         posiciones = new equipo[cantidadParticipantes]; //creo la tabla de posiciones 
                                         //segun cuantos equipos van a participar
         
+        cantidadFechas = cantidadParticipantes - 1; //ver tambien caso de liga ida y vuelta
+
         System.out.println("indique cuantos puestos tendra la nueva liga segun correspoda:");
 
 
@@ -91,9 +101,10 @@ public class liga extends competitionAbs implements Competition{
     }
     
     @Override
-    public void definirGanador() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'definirGanador'");
+    public void startCompetition(){
+
+        
+
     }
 
     @Override

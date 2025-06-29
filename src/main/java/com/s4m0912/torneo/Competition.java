@@ -1,7 +1,7 @@
 
 public interface Competition {
 
-    void definirGanador();
+    void startCompetition();
 
     void mostrarPremio();
 
