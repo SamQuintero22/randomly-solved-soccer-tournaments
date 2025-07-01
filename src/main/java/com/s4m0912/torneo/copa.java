@@ -1,5 +1,8 @@
 public class copa extends competitionAbs implements Competition {
 
+    equipo[] grupos = new equipo[4];
+
+
     @Override
     public void definirGanador() {
         // TODO Auto-generated method stub
