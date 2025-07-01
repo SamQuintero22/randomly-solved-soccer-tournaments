@@ -7,13 +7,14 @@ public class liga extends competitionAbs implements Competition{
     protected int puestosLibertadores = -1;
     protected int puestosSudamericana = -1;
     protected int puestosDescensos = -1;
-    protected int cantidadFechas; 
+    protected int cantidadFechas;
+    protected LinkedList<String> encuentrosFinalizados = new LinkedList<>();
 
     public static final Scanner scanner = new Scanner(System.in); // único scanner compartido
     
     public liga(){
-
-        super(); //usa el metodo establezido para construir una competition 
+        
+        super(); //usa el metodo establecido para construir una competition 
 
         System.out.println("indique cuantos participantes va a tener la nueva liga, debe ser un numero par: ");
 
@@ -103,7 +104,10 @@ public class liga extends competitionAbs implements Competition{
     @Override
     public void startCompetition(){
 
-        
+        System.out.println("========================================");
+        System.out.println("COMIENZA LA LIGA " + nameCompetition);
+        System.out.println("========================================");
+
 
     }
 
