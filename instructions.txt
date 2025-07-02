@@ -1,0 +1,13 @@
+Si quisiera iniciar una competicion subiendo un trofeo en formato ascci 
+puede copiar y pegar uno desde la carpeta trofeosAscci o generarlo 
+desde una web de generador de arte ascci como las siguientes: 
+
+--------------------------------------------------------------
+
+If you'd like to start a competition by uploading a trophy in ASCII format, 
+you can copy and paste one from the trofeosAscci folder or generate it 
+from an ASCII art generator website, such as the following:
+
+- https://www.ascii-art-generator.org/es.html
+
+- https://es.rakko.tools/tools/68/
