@@ -1,7 +1,7 @@
 # Randomly-solved-soccer-tournaments
 The most unpredictable soccer tournament in the world. Place your bets (if you're 18+)!
 
-#Project in development 🚧⚒️
+# Project in development 🚧⚒️
 This are going to FANtastic
 
 # Goal ⚽!
