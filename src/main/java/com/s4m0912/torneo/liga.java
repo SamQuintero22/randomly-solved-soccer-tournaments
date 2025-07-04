@@ -66,7 +66,15 @@ public class liga extends competitionAbs implements Competition{
         if(puestosDescensos >= 0){System.out.println("tabla creada");}
 
         definirParticipantes();
+
+        mostrarPremio();
+
+        if (!trofeoAscci.isEmpty()) {
+            verTrofeo();
+        }
+
     }
+
     
     @Override
     public void startCompetition(){

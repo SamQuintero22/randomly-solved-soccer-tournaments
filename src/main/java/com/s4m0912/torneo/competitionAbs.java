@@ -68,6 +68,13 @@ public abstract class competitionAbs {
         historialCampeones = new LinkedList<>();
     }
     
+    public void verTrofeo() {
+        System.out.println("Este es el trofeo de la competicion: ");
+        System.out.println(trofeoAscci);
+        System.out.println("Quien no se moriria por semejante belleza?");
+
+    }
+
     protected abstract void definirParticipantes();
 
 }
