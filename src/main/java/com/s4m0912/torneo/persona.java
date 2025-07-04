@@ -3,7 +3,6 @@ public abstract class persona {
     protected String nombreYApe;
     protected String DNI;
     protected int edad;
-    protected boolean esDT;
     
     public persona(String nombre, String dni, int edad){
 

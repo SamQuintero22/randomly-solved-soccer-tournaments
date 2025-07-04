@@ -1,8 +1,6 @@
 import java.util.*;
-import java.time.*;
 public class liga extends competitionAbs implements Competition{
 
-    protected int cantidadParticipantes = -1; 
     protected equipo[] posiciones;
     protected int puestosLibertadores = -1;
     protected int puestosSudamericana = -1;
@@ -81,14 +79,7 @@ public class liga extends competitionAbs implements Competition{
 
             String nombreEstadioAux = scanner.nextLine();
 
-            System.out.println("ingrese la fecha de fundacion del equipo " + i + " formato yyyy-mm-dd");
-
-            String fechaFundacionAux = scanner.nextLine();
-
-            LocalDate fecha = LocalDate.parse(fechaFundacionAux);
-
-
-            equipo nuevo = new equipo(nombreEquipoAux, nombreEstadioAux, fecha);
+            equipo nuevo = new equipo(nombreEquipoAux, nombreEstadioAux);
 
             posiciones[i] = nuevo;
 

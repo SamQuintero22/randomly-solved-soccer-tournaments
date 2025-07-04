@@ -3,8 +3,10 @@ import java.util.Scanner;
 
 public class copa extends competitionAbs implements Competition {
 
-    protected equipo[] grupo;
-    LinkedList<equipo[]> faseDeGrupos = new LinkedList<>();
+    int cantidadGrupos;
+    LinkedList<grupo> faseDeGrupos = new LinkedList<>();
+        public static final Scanner scanner = new Scanner(System.in); // único scanner compartido
+
 
 
     @Override
@@ -66,10 +68,13 @@ public class copa extends competitionAbs implements Competition {
     public void listarParticipantes() {
         for(int i = 0; i < faseDeGrupos.size();i++){
 
-            System.out.println("Participantes del grupo " + (i+1));
+            char letraGrupo = (char) ('A' + i);
+
+            System.out.println("Participantes del grupo " + letraGrupo);
+
             System.out.println("[-------------------------]");
 
-                for (equipo equipoActual : faseDeGrupos.get(i)) {
+                for (equipo equipoActual : faseDeGrupos.get(i).equipos) {
                 
                 System.err.println(equipoActual.nombreEquipo);
                 System.out.println(". . . . . . . . . . . . . .");
@@ -81,6 +86,51 @@ public class copa extends competitionAbs implements Competition {
 
 
         }
+    }
+
+    public void definirParticipantes(){
+
+        System.out.println("Por favor indique una cantidad de participantes igual a 8, 16 o 32");
+        Scanner scanner = new Scanner(System.in);
+        int cantidad = scanner.nextInt();
+
+        while (cantidad != 8 && cantidad != 16 && cantidad != 32) {
+
+            System.out.println("Por favor indique una cantidad de participantes igual a 8, 16 o 32");
+            cantidad = scanner.nextInt();
+            scanner.nextLine();
+
+
+        }
+
+        cantidadParticipantes = cantidad;
+
+        cantidadGrupos = cantidadParticipantes / 4;
+
+        System.out.println("Vamos a cargar los " + cantidadParticipantes +
+         " competidores de " + nameCompetition + " por grupos");
+
+         for(int i = 0; i < cantidadGrupos; i++){
+
+            char letraGrupo = (char) ('A' + i);
+
+            System.out.println("Equipos del grupo " + letraGrupo);
+
+            grupo nuevo = new grupo( "Grupo " + letraGrupo);
+
+            faseDeGrupos.add(nuevo);
+
+            System.out.println(nuevo.nombreGrupo + " Agregado correctamente");
+         }
+        
+         scanner.close();
+    }
+
+
+    public static void main(String[] args) {
+        copa copa = new copa();
+        copa.definirParticipantes();
+        copa.listarParticipantes();
     }
     
 }
