@@ -88,7 +88,8 @@ public class copa extends competitionAbs implements Competition {
         }
     }
 
-    public void definirParticipantes(){
+    @Override
+    protected void definirParticipantes(){ //sera usado en el constructor de copa 
 
         System.out.println("Por favor indique una cantidad de participantes igual a 8, 16 o 32");
         Scanner scanner = new Scanner(System.in);

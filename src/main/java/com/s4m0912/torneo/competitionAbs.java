@@ -10,7 +10,7 @@ public abstract class competitionAbs {
     protected int cantidadParticipantes = -1; 
 
 
-    public static LinkedList<equipo> historialCampeones;
+    protected LinkedList<equipo> historialCampeones;
 
     public competitionAbs(){
 
@@ -67,6 +67,7 @@ public abstract class competitionAbs {
 
         historialCampeones = new LinkedList<>();
     }
-                                                
+    
+    protected abstract void definirParticipantes();
 
 }

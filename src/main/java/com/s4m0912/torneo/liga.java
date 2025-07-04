@@ -65,31 +65,7 @@ public class liga extends competitionAbs implements Competition{
 
         if(puestosDescensos >= 0){System.out.println("tabla creada");}
 
-        System.out.println("Ahora vamos a llenar la tabla con equipos en principio tendran 0 puntos");
-        System.out.println("y estaran ordenados por orden alfabetico");
-        System.out.println("Vamos a agregar " + cantidadParticipantes + " a continuacion: ");
-
-        for(int i = 0; i<=cantidadParticipantes - 1; i++){
-
-            System.out.println("ingrese el nombre del equipo " + i);
-
-            String nombreEquipoAux = scanner.nextLine();
-
-            System.out.println("ingrese el nombre del estadio del equipo " + i);
-
-            String nombreEstadioAux = scanner.nextLine();
-
-            equipo nuevo = new equipo(nombreEquipoAux, nombreEstadioAux);
-
-            posiciones[i] = nuevo;
-
-            System.out.println("Equipo " + nombreEquipoAux +" agregado con exito");
-
-        }
-
-
-        Arrays.sort(posiciones, Comparator.comparing(equipo::getNombreEquipo)); //esto ordena alfabeticamente
-
+        definirParticipantes();
     }
     
     @Override
@@ -177,6 +153,37 @@ public class liga extends competitionAbs implements Competition{
             System.out.println("...............................................................................................................");
         }
         System.out.println("=-=-=-=-=-=-=-==-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
+    }
+
+    @Override
+    protected void definirParticipantes() {
+        
+        System.out.println("Ahora vamos a llenar la tabla con equipos en principio tendran 0 puntos");
+        System.out.println("y estaran ordenados por orden alfabetico");
+        System.out.println("Vamos a agregar " + cantidadParticipantes + " a continuacion: ");
+
+        for(int i = 0; i<=cantidadParticipantes - 1; i++){
+
+            System.out.println("ingrese el nombre del equipo " + i);
+
+            String nombreEquipoAux = scanner.nextLine();
+
+            System.out.println("ingrese el nombre del estadio del equipo " + i);
+
+            String nombreEstadioAux = scanner.nextLine();
+
+            equipo nuevo = new equipo(nombreEquipoAux, nombreEstadioAux);
+
+            posiciones[i] = nuevo;
+
+            System.out.println("Equipo " + nombreEquipoAux +" agregado con exito");
+
+        }
+
+
+        Arrays.sort(posiciones, Comparator.comparing(equipo::getNombreEquipo)); //esto ordena alfabeticamente
+
+
     }
     
 
