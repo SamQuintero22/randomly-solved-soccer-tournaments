@@ -10,11 +10,10 @@ public class equipo {
     protected LinkedList<jugador> plantilla;
     protected int cantidadPuntos; 
     
-    public equipo(String nombreEquipo, String estadio, LocalDate fechaFundacion){
+    public equipo(String nombreEquipo, String estadio){
 
         this.nombreEquipo = nombreEquipo; 
         this.estadio = estadio;
-        this.fechaFundacion = fechaFundacion;
         this.plantilla = new LinkedList<>();
         this.directorTecnico = null;
         cantidadPuntos = 0;
@@ -81,7 +80,7 @@ public class equipo {
         jugador j1 = new jugador("Lionel Messi", "12345678", 36, "Delantero",10);
         jugador j2 = new jugador("Emiliano Martínez", "87654321", 32, "Arquero",1);
 
-        equipo equipo1 = new equipo("paris", "estadio grande", LocalDate.of(2004, 5, 16));
+        equipo equipo1 = new equipo("paris", "estadio grande");
 
         equipo1.agregarJugador(j1);
         equipo1.agregarJugador(j2);

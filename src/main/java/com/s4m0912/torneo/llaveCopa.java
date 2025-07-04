@@ -1,4 +1,3 @@
-import java.time.LocalDate;
 import java.util.Random;
 
 public class llaveCopa{
@@ -172,8 +171,8 @@ public class llaveCopa{
         }
     
     public static void main(String[] args) {
-        equipo equipo1 = new equipo("Boca Juniors", "La Bombonera", LocalDate.of(1905, 4, 3));
-        equipo equipo2 = new equipo("River Plate", "El Monumental", LocalDate.of(1901, 5, 25));
+        equipo equipo1 = new equipo("Boca Juniors", "La Bombonera");
+        equipo equipo2 = new equipo("River Plate", "El Monumental");
 
         equipo1.contratarDT("Diego Martínez", "11111111", 42, "Ofensivo");
         equipo2.contratarDT("Martín Demichelis", "22222222", 43, "Equilibrado");
