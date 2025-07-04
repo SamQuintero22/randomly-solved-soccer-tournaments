@@ -11,8 +11,6 @@ public interface Competition {
 
     void cambiarNombre();
 
-    void verTrofeo();
-
     void listarParticipantes();
     
 }

@@ -11,7 +11,7 @@ public class dt extends persona{
 
     public void obtenerRol() {
      
-                System.out.print(estilo);
+                System.out.print("DT: " + estilo);
 
     }
 

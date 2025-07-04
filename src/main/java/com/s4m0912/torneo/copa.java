@@ -7,7 +7,22 @@ public class copa extends competitionAbs implements Competition {
     LinkedList<grupo> faseDeGrupos = new LinkedList<>();
         public static final Scanner scanner = new Scanner(System.in); // único scanner compartido
 
+    public copa(){
 
+        super();
+
+        definirParticipantes();
+
+        System.out.println("COPA " + mostrarNombre() + "CREADA");
+
+        mostrarPremio();
+
+        if(!trofeoAscci.isEmpty()){
+
+            verTrofeo();
+
+        }
+    }
 
     @Override
     public void startCompetition() {
@@ -61,7 +76,10 @@ public class copa extends competitionAbs implements Competition {
 
     @Override
     public void verTrofeo() {
+        System.out.println("Este es el trofeo de la competicion: ");
         System.out.println(trofeoAscci);
+        System.out.println("Quien no se moriria por semejante belleza?");
+
     }
 
     @Override
@@ -130,7 +148,6 @@ public class copa extends competitionAbs implements Competition {
 
     public static void main(String[] args) {
         copa copa = new copa();
-        copa.definirParticipantes();
         copa.listarParticipantes();
     }
     
