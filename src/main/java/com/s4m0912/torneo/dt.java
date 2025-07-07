@@ -9,9 +9,15 @@ public class dt extends persona{
 
     }
 
-    public void obtenerRol() {
+    public String obtenerRol(){
+
+        return "DT";
+
+    }
+
+    public void estiloDT() {
      
-                System.out.print("DT: " + estilo);
+        System.out.print("DT: " + estilo);
 
     }
 
