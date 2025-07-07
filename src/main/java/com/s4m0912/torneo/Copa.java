@@ -2,13 +2,13 @@ import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.Scanner;
 
-public class copa extends competitionAbs implements Competition {
+public class Copa extends competitionAbs implements Competition {
 
     int cantidadGrupos;
     LinkedList<grupo> faseDeGrupos = new LinkedList<>();
         public static final Scanner scanner = new Scanner(System.in); // único scanner compartido
 
-    public copa(){
+    public Copa(){
 
         super();
 
@@ -148,7 +148,7 @@ public class copa extends competitionAbs implements Competition {
 
 
     public static void main(String[] args) {
-        copa copa = new copa();
+        Copa copa = new Copa();
         copa.listarParticipantes();
     }
 
