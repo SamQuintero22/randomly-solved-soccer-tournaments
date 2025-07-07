@@ -156,7 +156,7 @@ private String definirPosGoleador(){
 
         numeroRandom = random.nextInt(listaDeLaPosicion.length);
 
-        System.out.println("El GOL FUE DE " + listaDeLaPosicion[numeroRandom]);
+        System.out.println("El GOL FUE DE " + listaDeLaPosicion[numeroRandom].getNombre());
 
         return listaDeLaPosicion[numeroRandom];
 
