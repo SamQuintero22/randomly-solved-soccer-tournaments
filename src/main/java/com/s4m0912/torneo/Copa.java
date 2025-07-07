@@ -2,10 +2,10 @@ import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.Scanner;
 
-public class Copa extends competitionAbs implements Competition {
+public class Copa extends CompetitionAbs implements Competition {
 
     int cantidadGrupos;
-    LinkedList<grupo> faseDeGrupos = new LinkedList<>();
+    LinkedList<Grupo> faseDeGrupos = new LinkedList<>();
         public static final Scanner scanner = new Scanner(System.in); // único scanner compartido
 
     public Copa(){
@@ -93,7 +93,7 @@ public class Copa extends competitionAbs implements Competition {
 
             System.out.println("[-------------------------]");
 
-                for (equipo equipoActual : faseDeGrupos.get(i).equipos) {
+                for (Equipo equipoActual : faseDeGrupos.get(i).equipos) {
                 
                 System.err.println(equipoActual.nombreEquipo);
                 System.out.println(". . . . . . . . . . . . . .");
@@ -136,7 +136,7 @@ public class Copa extends competitionAbs implements Competition {
 
             System.out.println("Equipos del grupo " + letraGrupo);
 
-            grupo nuevo = new grupo( "Grupo " + letraGrupo);
+            Grupo nuevo = new Grupo( "Grupo " + letraGrupo);
 
             faseDeGrupos.add(nuevo);
 
@@ -152,10 +152,10 @@ public class Copa extends competitionAbs implements Competition {
         copa.listarParticipantes();
     }
 
-    public void actualizarGoleadores(LinkedList<jugador> golesPartido){
+    public void actualizarGoleadores(LinkedList<Jugador> golesPartido){
         int indicejugador;
 
-        for (jugador jugadorActual : golesPartido) {
+        for (Jugador jugadorActual : golesPartido) {
             
             if(goleadores.contains(jugadorActual)){
 
@@ -173,7 +173,7 @@ public class Copa extends competitionAbs implements Competition {
 
         }
 
-        goleadores.sort(Comparator.comparing(jugador::getCantidadGoles).reversed()); //uso reversed para que me quede de mayor a menor 
+        goleadores.sort(Comparator.comparing(Jugador::getCantidadGoles).reversed()); //uso reversed para que me quede de mayor a menor 
     }
 
     public void listarGoleadores(){
@@ -184,7 +184,7 @@ public class Copa extends competitionAbs implements Competition {
             
         }
 
-        for (jugador jugadorActual : goleadores){
+        for (Jugador jugadorActual : goleadores){
 
             System.out.println(jugadorActual.getNombre() + " || " + 
              jugadorActual.getEquipoJuega().nombreEquipo + " || " + jugadorActual.getCantidadGoles() 

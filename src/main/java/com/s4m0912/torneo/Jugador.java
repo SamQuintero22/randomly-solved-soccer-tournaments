@@ -1,11 +1,11 @@
-public class jugador extends persona {
+public class Jugador extends Persona {
 
     protected String posicion;
     protected int dorsal;
     protected int cantidadGoles; 
-    protected equipo equipoJuega;
+    protected Equipo equipoJuega;
 
-    public jugador(String nombre, String dni, int edad, String posicion, int dorsal){
+    public Jugador(String nombre, String dni, int edad, String posicion, int dorsal){
 
         super(nombre, dni, edad);
         if (dorsal < 0) { throw new IllegalArgumentException("El dorsal debe tener un numero mayor o igual a 0 ");}
@@ -16,13 +16,13 @@ public class jugador extends persona {
 
     }
 
-    public void setEquipoJuega(equipo equipo){
+    public void setEquipoJuega(Equipo equipo){
 
         this.equipoJuega = equipo;
 
     }
 
-    public equipo getEquipoJuega(){
+    public Equipo getEquipoJuega(){
 
         return equipoJuega;
 

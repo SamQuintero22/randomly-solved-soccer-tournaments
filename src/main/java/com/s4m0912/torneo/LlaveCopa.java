@@ -1,16 +1,16 @@
 import java.util.Random;
 import java.util.LinkedList;
 
-public class llaveCopa{
+public class LlaveCopa{
 
     protected String nombreLlave; 
     
-    protected equipo equipo1;
-    protected equipo equipo2;
-    protected equipo ganadorLlave; 
-    protected LinkedList <jugador> listaGoles;
+    protected Equipo equipo1;
+    protected Equipo equipo2;
+    protected Equipo ganadorLlave; 
+    protected LinkedList <Jugador> listaGoles;
 
-    public llaveCopa(equipo equipoLocal, equipo equipoVisitante){
+    public LlaveCopa(Equipo equipoLocal, Equipo equipoVisitante){
 
         equipo1 = equipoLocal; 
         equipo2 = equipoVisitante;
@@ -29,7 +29,7 @@ public class llaveCopa{
         Random random = new Random();
         int turnos = 0;
 
-        jugador jugadorGOL; 
+        Jugador jugadorGOL; 
 
         while(Math.abs(puntos1 - puntos2) <= 2 && turnos < 20){ //mientras haya cierta paridad 
             desempenio1 = random.nextInt(100);
@@ -94,8 +94,8 @@ public class llaveCopa{
                 sorteoEquipo2 = random.nextInt(100);
                 }
 
-                    equipo comienzaPateando;
-                    equipo comienzaAtajando;
+                    Equipo comienzaPateando;
+                    Equipo comienzaAtajando;
 
 
 
@@ -181,23 +181,23 @@ public class llaveCopa{
 
         }
 
-    public void agregarAGoleadores(jugador jugadorGOl){
+    public void agregarAGoleadores(Jugador jugadorGOl){
 
         listaGoles.add(jugadorGOl);
 
     }
     
     public static void main(String[] args) {
-        equipo equipo1 = new equipo("Boca Juniors", "La Bombonera");
-        equipo equipo2 = new equipo("River Plate", "El Monumental");
+        Equipo equipo1 = new Equipo("Boca Juniors", "La Bombonera");
+        Equipo equipo2 = new Equipo("River Plate", "El Monumental");
 
         equipo1.contratarDT("Diego Martínez", "11111111", 42, "Ofensivo");
         equipo2.contratarDT("Martín Demichelis", "22222222", 43, "Equilibrado");
 
-        equipo1.agregarJugador(new jugador("Jugador 1", "33333333", 28, "Delantero", 9));
-        equipo2.agregarJugador(new jugador("Jugador 2", "44444444", 29, "Arquero", 1));
+        equipo1.agregarJugador(new Jugador("Jugador 1", "33333333", 28, "Delantero", 9));
+        equipo2.agregarJugador(new Jugador("Jugador 2", "44444444", 29, "Arquero", 1));
 
-        llaveCopa llave = new llaveCopa(equipo1, equipo2);
+        LlaveCopa llave = new LlaveCopa(equipo1, equipo2);
         llave.definirGanadorLlave();
     }
 

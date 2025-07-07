@@ -1,7 +1,7 @@
 import java.util.*;
-public class liga extends competitionAbs implements Competition{
+public class Liga extends CompetitionAbs implements Competition{
 
-    protected equipo[] posiciones;
+    protected Equipo[] posiciones;
     protected int puestosLibertadores = -1;
     protected int puestosSudamericana = -1;
     protected int puestosDescensos = -1;
@@ -10,7 +10,7 @@ public class liga extends competitionAbs implements Competition{
 
     public static final Scanner scanner = new Scanner(System.in); // único scanner compartido
     
-    public liga(){
+    public Liga(){
         
         super(); //usa el metodo establecido para construir una competition 
 
@@ -26,7 +26,7 @@ public class liga extends competitionAbs implements Competition{
             
         }
 
-        posiciones = new equipo[cantidadParticipantes]; //creo la tabla de posiciones 
+        posiciones = new Equipo[cantidadParticipantes]; //creo la tabla de posiciones 
                                         //segun cuantos equipos van a participar
         
         cantidadFechas = cantidadParticipantes - 1; //ver tambien caso de liga ida y vuelta
@@ -180,7 +180,7 @@ public class liga extends competitionAbs implements Competition{
 
             String nombreEstadioAux = scanner.nextLine();
 
-            equipo nuevo = new equipo(nombreEquipoAux, nombreEstadioAux);
+            Equipo nuevo = new Equipo(nombreEquipoAux, nombreEstadioAux);
 
             posiciones[i] = nuevo;
 
@@ -189,7 +189,7 @@ public class liga extends competitionAbs implements Competition{
         }
 
 
-        Arrays.sort(posiciones, Comparator.comparing(equipo::getNombreEquipo)); //esto ordena alfabeticamente
+        Arrays.sort(posiciones, Comparator.comparing(Equipo::getNombreEquipo)); //esto ordena alfabeticamente
 
 
     }

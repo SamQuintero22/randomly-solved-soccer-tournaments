@@ -9,12 +9,12 @@ public abstract class CompetitionAbs {
     protected int moneyReward;
     protected int cantidadParticipantes = -1;
 
-    protected LinkedList<jugador> goleadores;
-    protected LinkedList<equipo> historialCampeones;
+    protected LinkedList<Jugador> goleadores;
+    protected LinkedList<Equipo> historialCampeones;
 
     public CompetitionAbs(){
 
-        Scanner scanner = liga.scanner;
+        Scanner scanner = Liga.scanner;
         System.out.println("Ingrese el nombre de la competicion:");
         String palabra = scanner.nextLine(); 
         nameCompetition = palabra;
@@ -83,7 +83,7 @@ public abstract class CompetitionAbs {
             
             System.out.println("Listando todo los campeones de la competencia" + nameCompetition);
 
-            for (equipo equipoActual : historialCampeones){
+            for (Equipo equipoActual : historialCampeones){
                 System.out.println(equipoActual.nombreEquipo);
             }
 

@@ -1,8 +1,8 @@
-public class dt extends persona{
+public class Dt extends Persona{
 
     protected String estilo;
 
-    public dt(String nombre, String dni, int edad, String estilo){
+    public Dt(String nombre, String dni, int edad, String estilo){
 
         super(nombre, dni, edad);
         this.estilo = estilo;

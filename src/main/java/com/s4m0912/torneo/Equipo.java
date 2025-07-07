@@ -3,16 +3,16 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Random;
 
-public class equipo {
+public class Equipo {
 
     protected String nombreEquipo;
     protected String estadio; 
     protected LocalDate fechaFundacion;
-    protected dt directorTecnico;
-    protected LinkedList<jugador> plantilla;
+    protected Dt directorTecnico;
+    protected LinkedList<Jugador> plantilla;
     protected int cantidadPuntos; 
     
-    public equipo(String nombreEquipo, String estadio){
+    public Equipo(String nombreEquipo, String estadio){
 
         this.nombreEquipo = nombreEquipo; 
         this.estadio = estadio;
@@ -22,7 +22,7 @@ public class equipo {
 
     }
 
-    public void agregarJugador(jugador p){
+    public void agregarJugador(Jugador p){
 
         plantilla.add(p);
 
@@ -30,7 +30,7 @@ public class equipo {
 
     public void contratarDT(String nombre, String dni, int edad, String estilo){
 
-        dt nuevo = new dt(nombre, dni, edad, estilo);
+        Dt nuevo = new Dt(nombre, dni, edad, estilo);
 
         this.directorTecnico = nuevo;
 
@@ -60,7 +60,7 @@ public class equipo {
         System.out.println("Esta es la plantilla de " + nombreEquipo);
         System.out.println("=============================================");
 
-         for (jugador p : plantilla) {
+         for (Jugador p : plantilla) {
             System.out.println("-");
             System.out.print("#" + p.getDorsal() + " || ");
             System.out.print(p.getNombre() + " || ");
@@ -111,9 +111,9 @@ private String definirPosGoleador(){
 
     }
     
-    private jugador[] listarPosicion(String posicionListar){
+    private Jugador[] listarPosicion(String posicionListar){
 
-        jugador[] lista = new jugador[plantilla.size()];
+        Jugador[] lista = new Jugador[plantilla.size()];
         int j = 0;
 
         for (int i = 0; i<plantilla.size(); i++) {
@@ -137,11 +137,11 @@ private String definirPosGoleador(){
         return Arrays.copyOf(lista, j); //devuelve la lista del tamanio de j 
     }
 
-    public jugador definirGoleador(){
+    public Jugador definirGoleador(){
 
         String posGoleador = definirPosGoleador();
 
-        jugador[] listaDeLaPosicion = listarPosicion(posGoleador);
+        Jugador[] listaDeLaPosicion = listarPosicion(posGoleador);
 
         if (listaDeLaPosicion.length == 0) {
             
@@ -164,10 +164,10 @@ private String definirPosGoleador(){
 
 
       public static void main(String[] args) {
-        jugador j1 = new jugador("Lionel Messi", "12345678", 36, "Delantero",10);
-        jugador j2 = new jugador("Emiliano Martínez", "87654321", 32, "Arquero",1);
+        Jugador j1 = new Jugador("Lionel Messi", "12345678", 36, "Delantero",10);
+        Jugador j2 = new Jugador("Emiliano Martínez", "87654321", 32, "Arquero",1);
 
-        equipo equipo1 = new equipo("paris", "estadio grande");
+        Equipo equipo1 = new Equipo("paris", "estadio grande");
 
         equipo1.agregarJugador(j1);
         equipo1.agregarJugador(j2);

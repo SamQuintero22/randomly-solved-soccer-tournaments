@@ -2,16 +2,16 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Scanner;
 
-public class grupo{
+public class Grupo{
     
     protected String nombreGrupo;
-    protected equipo[] equipos = new equipo[4]; 
+    protected Equipo[] equipos = new Equipo[4]; 
 
-    public grupo(String nombreGrupo){
+    public Grupo(String nombreGrupo){
 
         this.nombreGrupo = nombreGrupo;
 
-        Scanner scanner = copa.scanner;
+        Scanner scanner = Copa.scanner;
 
         for(int i = 0; i<4; i++){
 
@@ -25,12 +25,12 @@ public class grupo{
             String nombreEstadio = scanner.nextLine();
             
 
-            equipo nuevo = new equipo(nombreEquipo, nombreEstadio);
+            Equipo nuevo = new Equipo(nombreEquipo, nombreEstadio);
 
             equipos[i] = nuevo;
 
         }
-        Arrays.sort(equipos, Comparator.comparing(equipo::getNombreEquipo)); //esto ordena alfabeticamente
+        Arrays.sort(equipos, Comparator.comparing(Equipo::getNombreEquipo)); //esto ordena alfabeticamente
 
         System.out.println("Grupo " + nombreGrupo + " creado con exito \n");
 
