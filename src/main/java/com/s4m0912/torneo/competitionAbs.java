@@ -5,11 +5,11 @@ public abstract class competitionAbs {
 
     protected String nameCompetition;
     protected String trofeoAscci;
-    protected int moneyReward;
     protected String qualificationAchievement;
-    protected int cantidadParticipantes = -1; 
+    protected int moneyReward;
+    protected int cantidadParticipantes = -1;
 
-
+    protected LinkedList<jugador> goleadores;
     protected LinkedList<equipo> historialCampeones;
 
     public competitionAbs(){
@@ -64,7 +64,7 @@ public abstract class competitionAbs {
         int numero = scanner.nextInt();
         moneyReward = numero;
 
-
+        goleadores = new LinkedList<>();
         historialCampeones = new LinkedList<>();
     }
     
@@ -93,6 +93,7 @@ public abstract class competitionAbs {
             System.out.println("QUIEN SERA EL PRIMERO?");
         }
 
-    }
+
+}
 
 }
