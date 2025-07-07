@@ -64,7 +64,7 @@ public class equipo {
             System.out.println("-");
             System.out.print("#" + p.getDorsal() + " || ");
             System.out.print(p.getNombre() + " || ");
-            p.obtenerRol();
+            System.out.println(p.obtenerRol());
             System.out.println(" || "+ p.getEdad() + " age");
         
             }
