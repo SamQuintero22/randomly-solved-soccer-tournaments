@@ -1,5 +1,7 @@
 import java.time.*;
+import java.util.Arrays;
 import java.util.LinkedList;
+import java.util.Random;
 
 public class equipo {
 
@@ -76,6 +78,91 @@ public class equipo {
 
     } 
     
+private String definirPosGoleador(){
+
+        
+        Random random = new Random();
+        int numeroRandom;
+        String posicionGol;
+
+        numeroRandom = random.nextInt(100);
+
+        if(numeroRandom >= 50){
+
+            posicionGol = "Delantero";
+
+        }else if (numeroRandom >= 25){
+
+            posicionGol = "Mediocampista";
+
+        }else if (numeroRandom >= 2){
+
+
+            posicionGol = "Defensor";
+
+        }else{ 
+
+            posicionGol = "Arquero";
+
+
+        }
+
+        return posicionGol;
+
+    }
+    
+    private jugador[] listarPosicion(String posicionListar){
+
+        jugador[] lista = new jugador[plantilla.size()];
+        int j = 0;
+
+        for (int i = 0; i<plantilla.size(); i++) {
+            
+            if (plantilla.get(i).posicion.equals(posicionListar)){
+
+                lista[j] = plantilla.get(i);
+                j++;
+            }
+
+
+        }
+
+        if(j==0){ //si ningun jugador fue agregado a la lista 
+            System.out.println("===========================");
+            System.out.println("No existen jugadores en la posicion pedida, devolviendo lista vacia");
+            System.out.println("===========================");
+
+        }
+
+        return Arrays.copyOf(lista, j); //devuelve la lista del tamanio de j 
+    }
+
+    public jugador definirGoleador(){
+
+        String posGoleador = definirPosGoleador();
+
+        jugador[] listaDeLaPosicion = listarPosicion(posGoleador);
+
+        if (listaDeLaPosicion.length == 0) {
+            
+            System.out.println("No hay jugadores disponibles en la posición seleccionada para anotar el gol.");
+            
+            return null;
+        }
+
+        Random random = new Random();
+
+        int numeroRandom; 
+
+        numeroRandom = random.nextInt(listaDeLaPosicion.length);
+
+        System.out.println("El GOL FUE DE " + listaDeLaPosicion[numeroRandom]);
+
+        return listaDeLaPosicion[numeroRandom];
+
+    }
+
+
       public static void main(String[] args) {
         jugador j1 = new jugador("Lionel Messi", "12345678", 36, "Delantero",10);
         jugador j2 = new jugador("Emiliano Martínez", "87654321", 32, "Arquero",1);
@@ -90,5 +177,4 @@ public class equipo {
     }
 
     
-
 }

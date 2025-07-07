@@ -24,6 +24,6 @@ public abstract class persona {
 
     }
 
-    public abstract void obtenerRol();
+    public abstract String obtenerRol();
     
 }
