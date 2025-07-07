@@ -1,18 +1,18 @@
 import java.util.LinkedList;
 import java.util.Scanner;
 
-public abstract class competitionAbs {
+public abstract class CompetitionAbs {
 
     protected String nameCompetition;
     protected String trofeoAscci;
-    protected int moneyReward;
     protected String qualificationAchievement;
-    protected int cantidadParticipantes = -1; 
+    protected int moneyReward;
+    protected int cantidadParticipantes = -1;
 
+    protected LinkedList<jugador> goleadores;
+    protected LinkedList<equipo> historialCampeones;
 
-    public static LinkedList<equipo> historialCampeones;
-
-    public competitionAbs(){
+    public CompetitionAbs(){
 
         Scanner scanner = liga.scanner;
         System.out.println("Ingrese el nombre de la competicion:");
@@ -64,9 +64,36 @@ public abstract class competitionAbs {
         int numero = scanner.nextInt();
         moneyReward = numero;
 
-
+        goleadores = new LinkedList<>();
         historialCampeones = new LinkedList<>();
     }
-                                                
+    
+    public void verTrofeo() {
+        System.out.println("Este es el trofeo de la competicion: ");
+        System.out.println(trofeoAscci);
+        System.out.println("Quien no se moriria por semejante belleza?");
+
+    }
+
+    protected abstract void definirParticipantes();
+
+    public void listarCampeones(){
+
+        if (!historialCampeones.isEmpty()){
+            
+            System.out.println("Listando todo los campeones de la competencia" + nameCompetition);
+
+            for (equipo equipoActual : historialCampeones){
+                System.out.println(equipoActual.nombreEquipo);
+            }
+
+        }else{
+
+            System.out.println("La competicion " + nameCompetition + " aun no ah sido ganada por ningun equipo... ");;
+            System.out.println("QUIEN SERA EL PRIMERO?");
+        }
+
+
+}
 
 }

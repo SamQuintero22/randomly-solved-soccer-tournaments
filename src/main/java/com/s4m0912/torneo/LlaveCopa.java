@@ -1,4 +1,5 @@
 import java.util.Random;
+import java.util.LinkedList;
 
 public class llaveCopa{
 
@@ -7,6 +8,7 @@ public class llaveCopa{
     protected equipo equipo1;
     protected equipo equipo2;
     protected equipo ganadorLlave; 
+    protected LinkedList <jugador> listaGoles;
 
     public llaveCopa(equipo equipoLocal, equipo equipoVisitante){
 
@@ -14,6 +16,7 @@ public class llaveCopa{
         equipo2 = equipoVisitante;
 
         nombreLlave = equipo1.getNombreEquipo() + " vs " + equipo2.getNombreEquipo();
+        listaGoles = new LinkedList<>();
     }
 
     public void definirGanadorLlave(){
@@ -25,6 +28,8 @@ public class llaveCopa{
         int desempenio1, desempenio2;
         Random random = new Random();
         int turnos = 0;
+
+        jugador jugadorGOL; 
 
         while(Math.abs(puntos1 - puntos2) <= 2 && turnos < 20){ //mientras haya cierta paridad 
             desempenio1 = random.nextInt(100);
@@ -38,7 +43,10 @@ public class llaveCopa{
                 if (desempenio1 - desempenio2 > 30) { 
                     
                     System.out.println("GOL DE " + equipo1.getNombreEquipo() + " || Resultado parcial: " + goles1 + "-" + goles2);
-                    goles1 ++;  
+                    goles1 ++;
+                    jugadorGOL = equipo1.definirGoleador();
+                    agregarAGoleadores(jugadorGOL);
+
                 } 
             }else if(desempenio2 > desempenio1){
 
@@ -48,6 +56,9 @@ public class llaveCopa{
                 
                     goles2 ++;
                     System.out.println("GOL DE " + equipo2.getNombreEquipo() + " || Resultado parcial: " + goles1 + "-" + goles2);
+                    jugadorGOL = equipo2.definirGoleador();
+                    agregarAGoleadores(jugadorGOL);
+
                 }
             }//si es el mismo numero se podria decir que el partido sigue como viene transcurriendo
 
@@ -169,6 +180,12 @@ public class llaveCopa{
             }
 
         }
+
+    public void agregarAGoleadores(jugador jugadorGOl){
+
+        listaGoles.add(jugadorGOl);
+
+    }
     
     public static void main(String[] args) {
         equipo equipo1 = new equipo("Boca Juniors", "La Bombonera");

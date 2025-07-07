@@ -1,13 +1,29 @@
+import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.Scanner;
 
-public class copa extends competitionAbs implements Competition {
+public class Copa extends competitionAbs implements Competition {
 
     int cantidadGrupos;
     LinkedList<grupo> faseDeGrupos = new LinkedList<>();
         public static final Scanner scanner = new Scanner(System.in); // único scanner compartido
 
+    public Copa(){
 
+        super();
+
+        definirParticipantes();
+
+        System.out.println("COPA " + mostrarNombre() + "CREADA");
+
+        mostrarPremio();
+
+        if(!trofeoAscci.isEmpty()){
+
+            verTrofeo();
+
+        }
+    }
 
     @Override
     public void startCompetition() {
@@ -61,7 +77,10 @@ public class copa extends competitionAbs implements Competition {
 
     @Override
     public void verTrofeo() {
+        System.out.println("Este es el trofeo de la competicion: ");
         System.out.println(trofeoAscci);
+        System.out.println("Quien no se moriria por semejante belleza?");
+
     }
 
     @Override
@@ -88,7 +107,8 @@ public class copa extends competitionAbs implements Competition {
         }
     }
 
-    public void definirParticipantes(){
+    @Override
+    protected void definirParticipantes(){ //sera usado en el constructor de copa 
 
         System.out.println("Por favor indique una cantidad de participantes igual a 8, 16 o 32");
         Scanner scanner = new Scanner(System.in);
@@ -128,9 +148,51 @@ public class copa extends competitionAbs implements Competition {
 
 
     public static void main(String[] args) {
-        copa copa = new copa();
-        copa.definirParticipantes();
+        Copa copa = new Copa();
         copa.listarParticipantes();
     }
-    
+
+    public void actualizarGoleadores(LinkedList<jugador> golesPartido){
+        int indicejugador;
+
+        for (jugador jugadorActual : golesPartido) {
+            
+            if(goleadores.contains(jugadorActual)){
+
+                indicejugador = goleadores.indexOf(jugadorActual);
+
+            }else{
+
+                goleadores.add(jugadorActual);
+                indicejugador = goleadores.indexOf(jugadorActual);
+
+            }
+
+                goleadores.get(indicejugador).anotarGol();
+
+
+        }
+
+        goleadores.sort(Comparator.comparing(jugador::getCantidadGoles).reversed()); //uso reversed para que me quede de mayor a menor 
+    }
+
+    public void listarGoleadores(){
+
+        if (goleadores.isEmpty()) {
+
+            System.out.println("Nadie hizo un gol aun");
+            
+        }
+
+        for (jugador jugadorActual : goleadores){
+
+            System.out.println(jugadorActual.getNombre() + " || " + 
+             jugadorActual.getEquipoJuega().nombreEquipo + " || " + jugadorActual.getCantidadGoles() 
+             + " Goles.");
+
+        }
+
+
+    }
+
 }
