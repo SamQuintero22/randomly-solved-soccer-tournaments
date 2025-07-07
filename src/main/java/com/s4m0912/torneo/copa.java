@@ -1,3 +1,4 @@
+import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.Scanner;
 
@@ -150,5 +151,48 @@ public class copa extends competitionAbs implements Competition {
         copa copa = new copa();
         copa.listarParticipantes();
     }
-    
+
+    public void actualizarGoleadores(LinkedList<jugador> golesPartido){
+        int indicejugador;
+
+        for (jugador jugadorActual : golesPartido) {
+            
+            if(goleadores.contains(jugadorActual)){
+
+                indicejugador = goleadores.indexOf(jugadorActual);
+
+            }else{
+
+                goleadores.add(jugadorActual);
+                indicejugador = goleadores.indexOf(jugadorActual);
+
+            }
+
+                goleadores.get(indicejugador).anotarGol();
+
+
+        }
+
+        goleadores.sort(Comparator.comparing(jugador::getCantidadGoles).reversed()); //uso reversed para que me quede de mayor a menor 
+    }
+
+    public void listarGoleadores(){
+
+        if (goleadores.isEmpty()) {
+
+            System.out.println("Nadie hizo un gol aun");
+            
+        }
+
+        for (jugador jugadorActual : goleadores){
+
+            System.out.println(jugadorActual.getNombre() + " || " + 
+             jugadorActual.getEquipoJuega().nombreEquipo + " || " + jugadorActual.getCantidadGoles() 
+             + " Goles.");
+
+        }
+
+
+    }
+
 }
